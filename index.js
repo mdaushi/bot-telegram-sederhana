@@ -28,7 +28,7 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 
 bot.launch({
     webhook: {
-      domain,
+      domain: 'https://testing-fiva.herokuapp.com/',
       port: 3000,
     }
   })
