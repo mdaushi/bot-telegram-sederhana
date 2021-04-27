@@ -29,10 +29,9 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch({
     webhook: {
       domain,
-      port: 9000,
+      port: 3000,
     }
   })
-// Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
