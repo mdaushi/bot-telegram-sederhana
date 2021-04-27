@@ -38,7 +38,7 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch({
     webhook: {
       domain: 'https://testing-fiva.herokuapp.com',
-      port: 4000
+      port: $PORT
     }
   })
 // Enable graceful stop
