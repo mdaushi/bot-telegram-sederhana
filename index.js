@@ -28,15 +28,19 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 // Set telegram webhook
 // The second argument is necessary only if the client uses a self-signed
 // certificate. Including it for a verified certificate may cause things to break.
-bot.telegram.setWebhook('https://testing-fiva.herokuapp.com/')
+// bot.telegram.setWebhook('https://testing-fiva.herokuapp.com/')
 
 // Start https webhook
 // bot.startWebhook('/webhook', tlsOptions, 8443)
 
 // Http webhook, for nginx/heroku users.
-bot.startWebhook('/', null, 5000)
-// bot.launch()
-
+// bot.startWebhook('/', null, 5000)
+bot.launch({
+    webhook: {
+      domain: 'https://testing-fiva.herokuapp.com',
+      port: 4000
+    }
+  })
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
