@@ -1,0 +1,1 @@
+web: telegraf -p $PORT
